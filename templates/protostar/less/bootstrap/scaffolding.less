@@ -1,0 +1,26 @@
+* {
+    .box-sizing(content-box);
+    &:before, &:after {
+        .box-sizing(content-box);
+    }
+}
+
+.content * {
+    .box-sizing(border-box);
+    &:before, &:after {
+        .box-sizing(border-box);
+    }
+}
+
+@media (max-width: @screen-sm-max) {
+    .img-responsive-article {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: @screen-xxs-max) {
+    .img-responsive-article {
+        max-width: none;
+        width: 100%;
+    }
+}

@@ -1,0 +1,316 @@
+@nav-border-bg: darken(@panel-default-bg, 5%);
+@nav-hover-bg: darken(@panel-default-bg, 5%);
+@nav-level-padding: 20px;
+@nav-level-padding-a: 12px;
+@nav-hover-margin: 15px;
+
+@nav-dropdown-nav-border: 1px solid @nav-border-bg;
+@nav-dropdown-nav-title-bg: darken(@navbar-inverse-bg, 15%);
+
+.nav-tabs {
+    border-bottom: 1px solid @nav-border-bg;
+
+    > li {
+        margin-left: 15px;
+
+        a {
+            border-top: 2px solid transparent;
+            border-radius: 0;
+            text-decoration: none;
+            color: @font-core-color-2;
+        }
+
+        a:focus, a:hover {
+            border-width: 1px;
+            border-top-width: 2px;
+            border-color: @nav-border-bg @nav-border-bg transparent;
+            background-color: #fff;
+            color: @font-core-color-2;
+        }
+    }
+
+    > li.active {
+        a, a:focus, a:hover {
+            border-left: 1px solid @nav-border-bg;
+            border-right: 1px solid @nav-border-bg;
+            border-top: 2px solid @brand-color-1;
+            background-color: #fff;
+            color: @font-core-color-2;
+        }
+
+        .badge {
+            background-color: @tab-active-badge-bg;
+        }
+    }
+
+    .badge {
+        margin-left: 0.6em;
+        background-color: @tab-badge-bg;
+    }
+
+    > li + li {
+        margin-left: 0;
+    }
+}
+
+.tab-content {
+    margin: @grid-gutter-width / 2 0;
+    padding: @grid-gutter-width / 2;
+    background-color: @core-color-2-light;
+    border: 1px solid @border-color;
+
+    &.tab-content-collapsed {
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+    }
+}
+
+.tab-content-light {
+    background: none;
+}
+
+.nav.menu-vertical {
+    margin: 0;
+    padding: 0;
+
+    li {
+        position: relative;
+        list-style: none;
+
+        a:hover {
+            background: @nav-hover-bg;
+            color: @brand-color-1;
+        }
+
+        a {
+            display: block;
+            border-top: 1px solid @nav-border-bg;
+            color: @font-core-color-2;
+            text-decoration: none;
+        }
+
+    }
+
+    li.current {
+        > a {
+            font-weight: 800;
+        }
+    }
+
+    li.level1 {
+
+        a {
+            padding-left: (@nav-level-padding + @nav-level-padding-a);
+        }
+    }
+
+    li.level1.parent {
+
+        &:before {
+            content: "\f112";
+            transform: rotate(180deg);
+            left: @nav-level-padding-a;
+            font-size: .8em;
+            line-height: 30px;
+        }
+    }
+
+    li.level2 {
+
+        a {
+            padding-left: (@nav-level-padding * 2) + @nav-level-padding-a;
+        }
+    }
+
+    li.level2.parent {
+
+        &:before {
+            content: "\f112";
+            transform: rotate(180deg);
+            left: (@nav-level-padding + @nav-level-padding-a);
+            font-size: .8em;
+            line-height: 30px;
+        }
+    }
+
+    li.level3 {
+        a {
+            padding-left: (@nav-level-padding * 3) + @nav-level-padding-a;
+        }
+    }
+
+    li:before {
+        font-family: FontAwesome;
+        position: absolute;
+        color: @brand-color-1;
+        top: .5em;
+    }
+}
+
+.navbar-main .nav.navbar-nav.dropdown ul.menu-secondary,
+.menu-secondary .nav.menu-vertical {
+    color: @menu-secondary-color;
+    font-weight: @menu-secondary-font-weight;
+    background: @menu-secondary-bg;
+    text-transform: @menu-secondary-transform;
+    border: 1px solid @menu-secondary-border;
+    .box-shadow(@menu-secondary-shadow);
+
+    li a {
+        font-size: @menu-secondary-font-size;
+        padding: @menu-secondary-link-padding;
+        border: 0;
+        &:hover {
+            color: @menu-secondary-color-hover;
+            font-weight: @menu-secondary-font-weight-hover;
+        }
+    }
+
+    li + li a {
+        border: 0 !important;
+        text-transform: @menu-secondary-transform;
+    }
+}
+
+.nav-spacing {
+    margin-bottom: @grid-gutter-width / 2;
+} 
+
+@media (min-width: @screen-lg-min) {
+    .tab-content {
+        padding: @grid-gutter-width;
+    }
+
+
+    .nav.menu-vertical {
+        li {
+            a {
+                padding: @nav-level-padding-a;
+            }
+        }
+    }
+
+    .nav-tabs {
+        > li {
+            > a {
+                text-transform: uppercase;
+                padding: @nav-link-padding;
+            }
+        }
+    }
+}
+
+.navbar-main .nav.navbar-nav.dropdown {
+    li {
+        width: 100%;
+        text-align: left;
+        position: relative;
+
+        a {
+            font-size: @font-size-base;
+            padding-left: @nav-level-padding;
+            padding-right: @nav-level-padding;
+            color: @nav-level-color;
+        }
+    }
+    
+    a.main-category,
+    a.main-category:focus,
+    a.main-category:hover {
+        background: @nav-dropdown-nav-title-bg;
+        color: @core-color-1;
+        text-transform: @main-category-transform;
+    }
+
+    .nav-parent a span {
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    ul {
+        position: absolute;
+        z-index: 8000;
+        width: 100%;
+        background: @nav-dropdown-nav-bg;
+
+        border-left: @nav-dropdown-nav-border;
+        border-right: @nav-dropdown-nav-border;
+        border-bottom: @nav-dropdown-nav-border;
+    }
+
+    ul ul {
+        top: -5px;
+        left: 100%;
+    }
+
+    ul,
+    li:hover ul ul{
+        display: none;
+    }
+
+    li:hover ul,
+    ul li:hover ul{
+        display: block;
+    }
+}
+
+.nav.navbar-nav.dropdown.sidebar {
+    float: none;
+}
+
+@media (max-width: @screen-xs-max) {
+    .nav-tabs {
+        > li {
+            float: none; 
+            margin-left: 0;
+            
+            a {
+                border: 1px solid @border-color;
+                border-left: 2px solid @border-color;
+                background-color: #fff;
+                padding-right: 35px;
+                
+                &::after {
+                    content: "\f0da";
+                    font: normal normal normal 14px/1 FontAwesome;
+                    position: absolute;
+                    top: 12px;
+                    right: 15px;
+                    
+                }
+            }
+
+            a:focus, a:hover {
+                border: 1px solid @border-color;
+                border-left: 2px solid @brand-color-1;
+                background-color: #fff;
+                color: @font-core-color-2;
+            }
+        }
+
+        > li.active {
+            a, a:focus, a:hover {
+                border: 1px solid @border-color;
+                border-left: 2px solid @brand-color-1;
+                background-color: #fff;
+                color: @font-core-color-2;
+            }
+        }
+        
+        &.nav-tabs-navigation {
+            border-bottom: 0;
+            margin-bottom: 0;
+        }
+    }
+    
+    .badge {
+        float: right;
+    }
+    
+    .tab-content {
+        &.tab-content-collapsed {
+            margin-top: 0;
+        }
+    }
+}

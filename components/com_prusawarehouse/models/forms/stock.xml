@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset>
+        <field name="id"
+               type="hidden"
+               required="true"/>
+
+        <field name="id_supplier"
+               type="sql"
+               multiple="false"
+               size="1"
+               label="ID dodavatele"
+               query="select id, name from #__prusawarehouse_suppliers"
+               key_field="id"
+               value_field="name"
+               default="0"
+               required="true" >
+            <option value="">Vyberte ID</option>
+        </field>
+
+        <field name="title_stock"
+               type="text"
+               label="Název"
+               required="true"/>
+
+        <field name="type"
+               type="list"
+               label="Typ"
+               required="true">
+        <option value="">Vyberte typ</option>
+        <option value="ele">Ele</option>
+        <option value="heat">Heat</option>
+        <option value="spoj. mat.">Spoj. mat.</option>
+        <option value="extra. spoj. mat.">Extra. spoj. mat.</option>
+        <option value="ložiska">Ložiska</option>
+        <option value="řemen">Řemen</option>
+        <option value="grm">Grm</option>
+        <option value="ft">Ft</option>
+        <option value="buzírka">Buzírka</option>
+        <option value="motory">Motory</option>
+        <option value="obal">Obal</option>
+    </field>
+
+        <field name="quantity_stock"
+               type="hidden"
+               label="Počet"
+               required="true"
+               default="0" />
+
+        <field name="quantity_min"
+               type="number"
+               label="Minimální počet"
+               required="true"/>
+
+        <field name="id_location"
+               type="sql"
+               multiple="false"
+               size="1"
+               label="Pozice na skladě"
+               query="select id, location from #__prusawarehouse_stocksloc"
+               key_field="id"
+               value_field="location"
+               default="0"
+               required="true" >
+            <option value="">Vyberte pozici</option>
+        </field>
+
+
+        <field name="price_stock"
+               type="text"
+               label="Cena"
+               required="true"/>
+
+        <field name="delivery"
+               type="number"
+               label="Doba doručení"
+               required="true"/>
+    </fieldset>
+</form>

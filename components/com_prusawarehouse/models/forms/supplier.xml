@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset>
+        <field name="id"
+               type="hidden"
+               required="true"/>
+
+        <field name="name"
+               type="text"
+               label="Název"
+               required="true"/>
+
+        <field name="email"
+               type="email"
+               label="E-mail"
+               required="true"/>
+    </fieldset>
+</form>

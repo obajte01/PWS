@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset>
+        <field name="id"
+               type="hidden"
+               required="true"/>
+
+        <field name="title_product"
+               type="text"
+               label="Název"
+               required="true"/>
+
+        <field name="quantity_product"
+               type="number"
+               label="Počet"
+               />
+
+        <field name="price_product"
+               type="text"
+               label="Cena"
+               required="true"/>
+    </fieldset>
+</form>

@@ -1,0 +1,224 @@
+// simplemenu
+@simplemenu-separator: '|';
+
+// navbar
+@navbar-border-radius: 0;
+@navbar-height: 64px;
+
+// navigation
+@navbar-inverse-bg: @brand-color-2;
+@navbar-inverse-hover-bg: @navbar-inverse-link-hover-bg;
+@navbar-inverse-bg-color: @navbar-inverse-bg;
+@navbar-inverse-bg-separator: none;
+@navbar-inverse-border-bottom: none;
+@navbar-inverse-border-bottom-hover: @navbar-inverse-border-bottom;
+@navbar-inverse-border-bottom-active: @navbar-inverse-border-bottom;
+@navbar-inverse-border-top: none;
+@navbar-inverse-border-top-hover: @navbar-inverse-border-top;
+@navbar-inverse-border-top-active: @navbar-inverse-border-top;
+@navbar-inverse-list-color: transparent;
+@navbar-inverse-link-color: @font-core-color-1;
+@navbar-inverse-link-hover-color: @navbar-inverse-color;
+@navbar-inverse-link-hover-bg: transparent;
+@navbar-inverse-link-background: @navbar-inverse-bg;
+@navbar-inverse-link-active-background: @navbar-inverse-link-active-bg;
+@navbar-inverse-font-size-sm: @font-size-base;
+@navbar-inverse-font-size-sm: @font-size-base;
+@navbar-inverse-text-shadow-sm: none;
+@navbar-inverse-text-shadow-hover-sm: @navbar-inverse-text-shadow-sm;
+@navbar-margin-bottom-main: @navbar-margin-bottom;
+@navbar-nav-link-padding: 12px 18px;
+
+// fonts
+@font-family-base: "Open Sans";
+
+// breadcrumb
+@breadcrumb-bg: none;
+@breadcrumb-separator: "/";
+@breadcrumb-padding-vertical: 25px;
+@breadcrumb-padding-horizontal: 0;
+
+// tags
+@colorTagWidth: 18px;
+@colorTagHeight: @colorTagWidth;
+@colorTagBorderRadius: 3px;
+
+// text
+@text-color: #34495e;
+@font-size-base: 13px;
+@font-size-large: @font-size-base;
+@font-size-h1: floor((@font-size-base * 2.15));
+@font-size-h2: floor((@font-size-base * 1.75));
+@font-size-h3: floor((@font-size-base * 1.3));
+@font-size-h4: @font-size-base;
+@font-size-content-h2: floor((@font-size-base * 1.3));
+@font-size-content-h3: floor((@font-size-base * 1.15));
+@font-size-medium:        ceil((@font-size-base * 1.14));
+
+
+// headings
+@headings-color: #34495e;
+@headings-line-height: 1.4;
+
+@headings-font-margin: @line-height-computed 0 (@line-height-computed / 2);
+@heading-1-margin: @headings-font-margin;
+@heading-2-margin: @headings-font-margin;
+@heading-3-margin: @headings-font-margin;
+@heading-4-margin: @headings-font-margin;
+@heading-5-margin: @headings-font-margin;
+@heading-6-margin: @headings-font-margin;
+
+@title-collapsed-margin-bottom-sm: 0;
+
+// buttons
+@btn-font-size: @font-size-base;
+@btn-font-weight-large: @btn-font-weight;
+
+@btn-danger-color: @font-core-color-1;
+@btn-danger-bg: @brand-color-4;
+@btn-danger-border: @brand-color-4;
+
+@btn-default-color: #818181;
+@btn-default-bg: @light-grey;
+@btn-default-border: @light-grey;
+
+@btn-primary-color: @font-core-color-1;
+@btn-primary-bg: @brand-color-1;
+@btn-primary-border: @brand-color-1;
+
+@btn-info-color: @font-core-color-1;
+@btn-info-bg: @core-color-2-lighter;
+@btn-info-border: @core-color-2-lighter;
+
+@dark-grey: #666;
+@light-grey: #edefee;
+
+// panels
+@panel-default-bg: @core-color-2-light;
+
+// carousel
+@carousel-control-color: #c2c2c2;
+
+// tabs
+@tabs-products-bg: @core-color-1;
+@tab-active-badge-bg: @brand-color-1;
+@tab-badge-bg: #c2c2c2;
+
+// nav-tabs
+@nav-tabs-active-link-hover-color: @core-color-1;
+@nav-tabs-active-link-hover-border-color: @brand-color-1;
+@nav-tabs-active-link-hover-bg: @brand-color-1;
+@nav-tabs-link-hover-border-color: @brand-color-1-light;
+@nav-tabs-link-hover-color: @core-color-1;
+@nav-tabs-link-hover-bg: @brand-color-1-light;
+
+@nav-tabs-inactive-link-color: @core-color-2;
+@nav-tabs-inactive-link-border-color: @core-color-2-light;
+@nav-tabs-inactive-link-bg: @core-color-2-light;
+@nav-dropdown-nav-bg: @core-color-2-light;
+
+// badges
+@badge-font-weight: normal;
+
+// tables
+@table-color: #595959;
+@table-border-color: #f2f2f2;
+@table-description-bg: #ececec;
+@table-description-border-color: #eaeaea;
+
+// Global textual link color.
+@link-color: @brand-color-1;
+@link-hover-color: @brand-color-1;
+
+// lists
+@ol-number-color: #9bacb8;
+
+/*** alerts ***/
+@alert-border-radius: 0;
+
+@state-default-bg: #f68080;
+@state-default-text: #fff;
+
+// success
+@state-success-bg: #75c594;
+@state-success-border: @state-success-bg;
+@state-success-text: #fff;
+@state-success-icon: darken(@state-success-bg, 15%);
+
+@state-success-inverse-bg: #f3faf6;
+@state-success-inverse-border: #cce8d7;
+@state-success-inverse-text: @state-success-icon;
+
+// info
+@state-info-bg: #8cbfe2;
+@state-info-border: @state-info-bg;
+@state-info-text: #fff;
+@state-info-icon: darken(@state-info-bg, 15%);
+
+@state-info-inverse-bg: #fafdff;
+@state-info-inverse-border: #deeffa;
+@state-info-inverse-text: @state-info-icon;
+
+// warning
+@state-warning-bg: #d6a765;
+@state-warning-border: @state-warning-bg;
+@state-warning-text: #fff;
+@state-warning-icon: darken(@state-warning-bg, 15%);
+
+@state-warning-inverse-bg: #fef8ef;
+@state-warning-inverse-border: #f2dbbb;
+@state-warning-inverse-text: @state-warning-icon;
+
+//danger
+@state-danger-bg: #f68080;
+@state-danger-border: @state-danger-bg;
+@state-danger-text: #fff;
+@state-danger-icon: darken(@state-danger-bg, 15%);
+
+@state-danger-inverse-bg: #fef3f3;
+@state-danger-inverse-border: #f8d6d6;
+@state-danger-inverse-text: @state-danger-icon;
+
+// labels
+@label-default-bg: @state-default-bg;
+@label-success-bg: @state-success-bg;
+@label-info-bg: @state-info-bg;
+@label-warning-bg: @state-warning-bg;
+@label-danger-bg: @state-danger-bg;
+@label-notice-bg: @state-info-bg;
+
+// close
+@close-color: #fff;
+
+// forms
+@input-border-focus: #379adc;
+
+
+@is-responsive: true;
+
+@brand-cta: #f55c59;
+@btn-cta-color: #fff;
+@btn-cta-bg: @brand-cta;
+@btn-cta-border: @btn-cta-bg;
+
+@invalid-input-border: 2px solid #f55c59;
+
+
+@screen-xs:                  480px;
+@screen-xs-min:              @screen-xs;
+//** Deprecated `@screen-tablet` as of v3.0.1
+@screen-phone:              @screen-xs-min;
+
+
+// Large screen / wide desktop
+//** Deprecated `@screen-lg` as of v3.0.1
+@screen-lg:                  1380px;
+@screen-lg-min:              @screen-lg;
+//** Deprecated `@screen-lg-desktop` as of v3.0.1
+@screen-lg-desktop:          @screen-lg-min;
+
+@screen-xxs-max:             (@screen-xs-min - 1);
+
+@info-icon-color: #93aad3;
+@info-icon-hover-color: #f0c344;
+@check-icon-color: #6ba33e;

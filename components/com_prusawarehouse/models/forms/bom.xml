@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset>
+        <field name="id"
+               type="hidden"
+               required="true"/>
+
+        <field name="id_product"
+               type="sql"
+               multiple="false"
+               size="1"
+               label="Produkt"
+               query="select id, title_product from #__prusawarehouse_products"
+               key_field="id"
+               value_field="title_product"
+               default="0">
+            <option value="">Vyberte název</option>
+        </field>
+
+        <field name="id_stock"
+               type="sql"
+               multiple="false"
+               size="1"
+               label="Skladová položka"
+               query="select id, title_stock from #__prusawarehouse_stocks"
+               key_field="id"
+               value_field="title_stock"
+               default="0">
+            <option value="">Vyberte název</option>
+        </field>
+
+        <field name="quantity_bom"
+               type="number"
+               label="Počet"
+               required="true"/>
+    </fieldset>
+</form>

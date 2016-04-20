@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset>
+        <field name="id"
+               type="hidden"
+               required="true"/>
+
+        <field name="id_supplier"
+               type="sql"
+               multiple="false"
+               size="1"
+               label="ID dodavatele"
+               query="select id, name from #__prusawarehouse_suppliers"
+               key_field="id"
+               value_field="name"
+               default="0"
+               required="true" >
+            <option value="">Vyberte ID</option>
+        </field>
+
+        <field name="content"
+               type="text"
+               label="Obsah"
+               required="true"/>
+
+        <field name="assumed_delivery"
+               type="calendar"
+               label="Předpokládané doručení"
+               required="true"/>
+    </fieldset>
+</form>

@@ -1,0 +1,123 @@
+.alert-inverse(@border-color, @color, @background) {
+    border-color:  @border-color;
+    color: @color;
+    background: @background;
+}
+
+.alert-arrow(@border-color, @color, @background)
+{
+    .alert-inverse(@border-color, @color, @background);
+    .arrow-top-left(@border-color, @background);
+    .arrow-top-position(0);
+
+    padding: 10px;
+    margin-top: 20px;
+
+    a {
+        color: @color;
+    }
+}
+
+.alert {
+    padding-left: 70px;
+    background-color: @brand-danger;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 30px;
+
+    &:before {
+        font-family: FontAwesome;
+        font-size: 3em;
+        padding-right: 28px;
+        vertical-align: middle;
+        display: inline-block;
+        margin-left: -50px;
+        color: #CF3A36;
+        position: absolute;
+        content: "\f071";
+    }
+    h4 {
+        font-size: 16px;
+    }
+    p {
+        font-size: 13px;
+        margin: 0;
+    }
+
+}
+
+.alert-success {
+    .alert-variant(@alert-success-bg; @alert-success-border; @alert-success-text);
+
+    &.alert-inverse {
+        .alert-inverse(@state-success-inverse-border, @state-success-inverse-text, @state-success-inverse-bg);
+    }
+
+    &:before {
+        content: "\f14a";
+        color: @state-success-icon;
+    }
+
+}
+
+.alert-success-arrow {
+    .alert-arrow(@state-success-inverse-border, @state-success-inverse-text, @state-success-inverse-bg);
+}
+
+.alert-info,
+.alert-notice {
+    &.alert-inverse {
+        .alert-inverse(@state-info-inverse-border, @state-info-inverse-text, @state-info-inverse-bg);
+    }
+
+    &:before {
+        content: "\f05a";
+        color: @state-info-icon;
+    }
+}
+
+.alert-info-arrow,
+.alert-notice-arrow {
+    .alert-arrow(@state-info-inverse-border, @state-info-inverse-text, @state-info-inverse-bg);
+}
+
+.alert-warning {
+    &.alert-inverse {
+        .alert-inverse(@state-warning-inverse-border, @state-warning-inverse-text, @state-warning-inverse-bg);
+    }
+
+    &:before {
+        content: "\f071";
+        color: @state-warning-icon;
+    }
+}
+
+.alert-warning-arrow {
+    .alert-arrow(@state-warning-inverse-border, @state-warning-inverse-text, @state-warning-inverse-bg);
+}
+
+.alert-danger {
+    &.alert-inverse {
+        .alert-inverse(@state-danger-inverse-border, @state-danger-inverse-text, @state-danger-inverse-bg);
+    }
+
+    &:before {
+        content: "\f05e";
+        color: @state-danger-icon;
+    }
+
+}
+
+.alert-danger-arrow {
+    .alert-arrow(@state-danger-inverse-border, @state-danger-inverse-text, @state-danger-inverse-bg);
+}
+
+.alert-responsive {
+    display: inline-table;
+    width: 100%;
+    
+    span {
+        display: table-cell;
+    }
+    
+}

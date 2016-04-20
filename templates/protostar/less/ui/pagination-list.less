@@ -1,0 +1,51 @@
+.pagination-box {
+    display: table;
+    ul {
+        font-size: 16px;
+        background-color: #edefee;
+        list-style-type: none;
+        border: 1px solid #7f7f7f;
+        border-radius: 5px;
+        padding: 0;
+        margin:  0;
+        li {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 6px 13px 6px 13px;
+            border-right: 1px solid #7f7f7f;
+        }
+        li:last-child {
+            border-right: none;
+        }
+        li:hover {
+            background-color: #d2d7d5;
+        }
+        .active {
+            font-weight: bold;
+        }
+        a {
+            text-decoration: none;
+            color: #7f7f7f;
+            .icon-next {
+                &:before {
+                    content: "\f051";
+                }
+            }
+            .icon-last {
+                &:before {
+                    content: "\f050";
+                }
+            }
+            .icon-previous {
+                &:before {
+                    content: "\f048";
+                }
+            }
+            .icon-first {
+                &:before {
+                    content: "\f049";
+                }
+            }
+        }
+    }
+}

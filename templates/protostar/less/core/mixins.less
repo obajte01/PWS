@@ -1,0 +1,43 @@
+.link-underline(@text-underline, @hover-underline) {
+    text-decoration: @text-underline;
+
+    &:focus,
+    &:hover {
+        text-decoration: @hover-underline;
+    }
+}
+
+.link-underlined()
+{
+    .link-underline(underline, none);
+}
+
+.link-not-underlined()
+{
+    .link-underline(none, underline);
+}
+
+.separator-top() {
+    overflow: hidden;
+
+    &::before {
+        .separator-content(top);
+    }
+}
+
+.separator-bottom() {
+    overflow: hidden;
+
+    &::after {
+        .separator-content(bottom);
+    }
+}
+
+.separator-content(@where) {
+    content: "";
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-@{where}: 1px solid #e8e8e8;
+    clear: both;
+    display: block;
+}

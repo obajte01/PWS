@@ -1,0 +1,70 @@
+.arrow(@border-color) {
+    &:after {
+        top: 99%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(136, 183, 213, 0);
+        border-top-color: @border-color;
+        border-width: 5px;
+        margin-left: -5px;
+    }
+}
+
+.arrow-top-position(@left) {
+    &:after, &::before {
+        left: @left;
+    }
+}
+
+.arrow-top(@border-color, @content-color) {
+    position: relative;
+    background: @content-color;
+    border: 1px solid @border-color;
+
+    &:after, &::before {
+        bottom: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+}
+
+.arrow-top-right(@border-color, @content-color) {
+    .arrow-top(@border-color, @content-color);
+
+    &:after {
+        border-width: 0 0 12px 12px;
+        margin-left: 0;
+        border-color: transparent transparent @content-color transparent;
+    }
+
+    &:before {
+        border-width: 0 0 15px 14px;
+        margin-left: -1px;
+        border-color: transparent transparent @border-color transparent;
+    }
+}
+
+.arrow-top-left(@border-color, @content-color) {
+    .arrow-top(@border-color, @content-color);
+
+    &:after {
+        border-width: 12px 0 0 12px;
+        margin-left: 0;
+        border-color: transparent transparent transparent @content-color;
+    }
+
+    &:before {
+        border-width: 15px 0 0 14px;
+        margin-left: -1px;
+        border-color: transparent transparent transparent @border-color;
+    }
+}
