@@ -27,8 +27,8 @@ $optionsOrd = [
     </div>
 <?php else: ?>
     <form id="adminForm" method="post" name="adminForm" class="spacing-md pws-form">
-        <?= JHtml::_('select.genericlist', $optionsDir, 'direction', '', 'value', 'text', $listDirn); ?>
-        <?= JHtml::_('select.genericlist', $optionsOrd, 'column', '', 'value', 'text', $listOrd); ?>
+        <?= JHtml::_('select.genericlist', $optionsDir, 'filter_order_Dir', '', 'value', 'text', $listDirn); ?>
+        <?= JHtml::_('select.genericlist', $optionsOrd, 'filter_order', '', 'value', 'text', $listOrd); ?>
         <button type="submit" class="btn btn-default">Seřadit</button>
     </form>
     <div class="table-responsive">

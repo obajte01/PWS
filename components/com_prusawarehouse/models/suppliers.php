@@ -14,16 +14,14 @@ class PrusaWareHouseModelSuppliers extends JModelList
         parent::__construct($config);
     }
 
-    protected function populateState($ordering = null, $direction = null)
+    protected function populateState($ordering = 'id', $direction = 'ASC')
     {
-        $ordering = $this->getUserStateFromRequest($this->context . '.filter.search', 'column');
-        $direction = $this->getUserStateFromRequest($this->context . '.filter.search', 'direction');
-
-        if (!$ordering) {
-            $ordering = 'id';
-        }
-
         parent::populateState($ordering, $direction);
+    }
+
+    protected function getStoreId($id = '')
+    {
+        return parent::getStoreId($id);
     }
 
     protected function getListQuery()
@@ -31,7 +29,8 @@ class PrusaWareHouseModelSuppliers extends JModelList
         $query = $this->_db->getQuery(true);
 
         $query->select('*')
-            ->from('#__prusawarehouse_suppliers');
+            ->from('#__prusawarehouse_suppliers')
+            ->where('state=1');
 
         $query->order($this->_db->escape($this->getState('list.ordering', 'id')).' '.
             $this->_db->escape($this->getState('list.direction', 'ASC')));
