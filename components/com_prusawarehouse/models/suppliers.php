@@ -29,7 +29,8 @@ class PrusaWareHouseModelSuppliers extends JModelList
         $query = $this->_db->getQuery(true);
 
         $query->select('*')
-            ->from('#__prusawarehouse_suppliers');
+            ->from('#__prusawarehouse_suppliers')
+            ->where('state=1');
 
         $query->order($this->_db->escape($this->getState('list.ordering', 'id')).' '.
             $this->_db->escape($this->getState('list.direction', 'ASC')));
