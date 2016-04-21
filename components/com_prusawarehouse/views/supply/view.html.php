@@ -34,15 +34,15 @@ class PrusaWarehouseViewSupply extends JViewLegacy
         $statement = '';
         foreach ($items as $item)
         {
-            $onePrinter = (int)$item->quantity_min / 10;
+            $onePrinter = (int)$item->quantity_min / (int)printerCount;
             if($item->id == (int)$id){
-                if($item->quantity_stock <= ($onePrinter*10))
+                if($item->quantity_stock <= ($onePrinter*(int)printerCount))
                     $statement = 'danger';
-                else if ($item->quantity_stock >= ($onePrinter*30))
+                else if ($item->quantity_stock >= ($onePrinter*(int)printerSucces))
                     $statement = 'success';
-                else if (($item->quantity_stock > ($onePrinter*10)) && ($item->quantity_stock < ($onePrinter*14)))
+                else if (($item->quantity_stock > ($onePrinter*(int)printerCount)) && ($item->quantity_stock < ($onePrinter*(int)printerWarning)))
                     $statement = 'warning';
-                else if (($item->quantity_stock >= ($onePrinter*14)) && ($item->quantity_stock < ($onePrinter*30)))
+                else if (($item->quantity_stock >= ($onePrinter*(int)printerWarning)) && ($item->quantity_stock < ($onePrinter*(int)printerSucces)))
                     $statement = 'info';
             }
         }

@@ -9207,6 +9207,12 @@ img.bordered {
   background-color: #fff;
   border: 1px solid #ccc;
 }
+.pws-form-select select {
+  width: 150px;
+  height: 35px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
 .pws-form .controls {
   margin-bottom: 15px;
 }
@@ -9353,7 +9359,7 @@ img.bordered {
 }
 .pagination-box ul a {
   text-decoration: none;
-  color: #7f7f7f;
+  color: #34495e;
 }
 .pagination-box ul a .icon-next:before {
   content: "\f051";
