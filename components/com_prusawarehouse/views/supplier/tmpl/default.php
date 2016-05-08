@@ -9,7 +9,7 @@
                   action="<?= JRoute::_('index.php?option=com_prusawarehouse&view=supplier&id=' . (int)$this->item->id); ?>"
                   method="post">
                 <?= $this->form->renderField('id'); ?>
-                <?= $this->form->renderField('title'); ?>
+                <?= $this->form->renderField('name'); ?>
                 <?= $this->form->renderField('email'); ?>
                 <button class="btn btn-default" type="submit"><?= JText::_('COM_PRUSAWAREHOUSE_ADD') ?></button>
                 <input type="hidden" value="supplier.save" name="task">

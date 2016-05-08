@@ -8,11 +8,8 @@
       action="<?= JRoute::_('index.php?option=com_prusawarehouse&view=manufacture'); ?>">
     <select name="selid" class="pws-select ">
         <option value=""><?= JText::_('COM_PRUSAWAREHOUSE_VIEW_MANUFACTURE_SELECT_PRODUCT'); ?></option>
-        <?php $value = 1 ?>
-        <?php foreach ($this->items as $select): ?>
-            <?php if ($value == $select->id_product) : ?>
-                <option value="<?= $value++ ?>"><?= $this->escape($select->title_product) ?></option>
-            <?php endif ?>
+        <?php foreach ($this->getProducts() as $select): ?>
+            <option value="<?= (int)$select->id ?>"><?= $this->escape($select->title_product) ?></option>
         <?php endforeach ?>
     </select>
     <input name="mp_count" type="number" min="0" max="999" class="pws-manufacture">

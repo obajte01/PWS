@@ -22,19 +22,23 @@ class PrusaWarehouseControllerManufacture extends JControllerAdmin
         $state = false;
         foreach ($this->items as $item)
         {
-            if($item->id_product = $product_id)
+            if($item->id_product == $product_id)
             {
-                $new_quantity = 0;
-                $new_quantity = $item->quantity_stock - ($item->quantity_bom * $mp_count);
-                if($model->updateNewQuantity($new_quantity, $item->id_stock))
+                if (!($item->quantity_stock < $item->quantity_bom))
                 {
-                    $state = true;
+                    $new_quantity = $item->quantity_stock - ($item->quantity_bom * $mp_count);
+                    if($model->updateNewQuantity($new_quantity, $item->id_stock))
+                    {
+                        $state = true;
+                    }
                 }
+
             }
         }
 
-        if($model->updateNewProduct($new_pq, $product_id) && $state)
+        if($state)
         {
+            $model->updateNewProduct($new_pq, $product_id);
             $msg = JText::_('COM_PRUSAWAREHOUSE_WARNINGS_MANUFACTURE_SUCCES');
             $this->setRedirect(JRoute::_('index.php?option=com_prusawarehouse&view=manufacture'),JFactory::getApplication()->enqueueMessage($msg));
         }

@@ -18,6 +18,7 @@
                     <input type="hidden" name="task" value="supply.addNewQuantity"/>
                     <input type="hidden" name="cid" value="<?= (int)$stock->id; ?>"/>
                     <input type="hidden" name="cqmin" value="<?= $this->escape($stock->quantity_min); ?>"/>
+                    <input type="hidden" name="cq" value="<?= $this->escape($stock->quantity_stock); ?>"/>
                 </td>
             </form>
         </tr>

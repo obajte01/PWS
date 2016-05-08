@@ -7,5 +7,6 @@ class PrusaWarehouseTableBom extends JTable
     {
         parent::__construct('#__prusawarehouse_boms', 'id', $db);
 
+        $this->setColumnAlias('published', 'state');
     }
 }

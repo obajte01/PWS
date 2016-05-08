@@ -67,12 +67,13 @@
 
 
         <field name="price_stock"
-               type="text"
+               type="number"
                label="Cena"
+               min="0"
                required="true"/>
 
         <field name="delivery"
-               type="number"
+               type="text"
                label="Doba doručení"
                required="true"/>
     </fieldset>

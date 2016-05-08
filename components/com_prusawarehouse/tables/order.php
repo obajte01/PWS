@@ -7,5 +7,6 @@ class PrusaWarehouseTableOrder extends JTable
     {
         parent::__construct('#__prusawarehouse_orders', 'id', $db);
 
+        $this->setColumnAlias('published', 'state');
     }
 }

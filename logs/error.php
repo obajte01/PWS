@@ -116,3 +116,4 @@
 2016-04-18T09:50:58+00:00	INFO ::1	joomlafailure	Uživatelské jméno a heslo nesouhlasí nebo ještě nemáte vytvořen účet.
 2016-04-19T12:12:48+00:00	INFO ::1	joomlafailure	Uživatelské jméno a heslo nesouhlasí nebo ještě nemáte vytvořen účet.
 2016-04-19T21:14:09+00:00	INFO ::1	joomlafailure	Uživatelské jméno a heslo nesouhlasí nebo ještě nemáte vytvořen účet.
+2016-04-24T11:09:17+00:00	INFO 192.168.0.101	joomlafailure	Uživatelské jméno a heslo nesouhlasí nebo ještě nemáte vytvořen účet.

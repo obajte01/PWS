@@ -27,4 +27,18 @@ class PrusaWarehouseViewBoms extends JViewLegacy
 
         parent::display($tpl);
     }
+
+    public function getProducts()
+    {
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
+
+        $query->select('id, title_product')
+            ->from($db->quoteName('#__prusawarehouse_products'));
+        $db->setQuery($query);
+        $products = $db->loadObjectList();
+
+
+        return $products;
+    }
 }

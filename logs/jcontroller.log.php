@@ -33,3 +33,6 @@
 2016-04-15T19:07:54+00:00	INFO ::1	controller	Checking edit ID com_templates.edit.style.7: 1 Array (     [0] => 7 ) 
 2016-04-15T19:08:04+00:00	INFO ::1	controller	Holding edit ID com_templates.edit.style.7 Array (     [0] => 7 ) 
 2016-04-15T19:08:04+00:00	INFO ::1	controller	Checking edit ID com_templates.edit.style.7: 1 Array (     [0] => 7 ) 
+2016-04-26T11:51:22+00:00	INFO ::1	controller	Holding edit ID com_menus.edit.item.106 Array (     [0] => 106 ) 
+2016-04-26T11:51:59+00:00	INFO ::1	controller	Holding edit ID com_menus.edit.item.106 Array (     [0] => 106 ) 
+2016-04-26T11:53:11+00:00	INFO ::1	controller	Releasing edit ID com_menus.edit.item.106 Array ( ) 

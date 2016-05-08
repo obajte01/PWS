@@ -5,14 +5,14 @@ $listDirn = $this->state->get('list.direction');
 $listOrd = $this->state->get('list.ordering');
 
 $optionsDir = [
-    JHtml::_('select.option', 'desc', 'DESC'),
-    JHtml::_('select.option', 'asc', 'ASC')
+    JHtml::_('select.option', 'asc', JText::_('COM_PRUSAWAREHOUSE_FILTER_ASC')),
+    JHtml::_('select.option', 'desc', JText::_('COM_PRUSAWAREHOUSE_FILTER_DESC'))
 ];
 
 $optionsOrd = [
-    JHtml::_('select.option', 'id', 'ID'),
-    JHtml::_('select.option', 'name', 'Jméno'),
-    JHtml::_('select.option', 'email', 'Email')
+    JHtml::_('select.option', 'id', JText::_('COM_PRUSAWAREHOUSE_FILTER_ID')),
+    JHtml::_('select.option', 'name', JText::_('COM_PRUSAWAREHOUSE_FILTER_TITLE')),
+    JHtml::_('select.option', 'email', JText::_('COM_PRUSAWAREHOUSE_FILTER_EMAIL'))
 ];
 ?>
 
@@ -26,10 +26,10 @@ $optionsOrd = [
         <?= JText::_('COM_PRUSAWAREHOUSE_NOTHING_FOUND'); ?>
     </div>
 <?php else: ?>
-    <form id="adminForm" method="post" name="adminForm" class="spacing-md pws-form">
+    <form id="adminForm" method="post" name="adminForm" class="spacing-md pws-form-select">
         <?= JHtml::_('select.genericlist', $optionsDir, 'filter_order_Dir', '', 'value', 'text', $listDirn); ?>
         <?= JHtml::_('select.genericlist', $optionsOrd, 'filter_order', '', 'value', 'text', $listOrd); ?>
-        <button type="submit" class="btn btn-default">Seřadit</button>
+        <button type="submit" class="btn btn-default"><?= JText::_('COM_PRUSAWAREHOUSE_ORDER')?></button>
     </form>
     <div class="table-responsive">
         <table class="table table-striped pws-table">

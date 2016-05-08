@@ -38,7 +38,7 @@
     <div class="col-md-2 col-sm-3 col-xs-5">
         <button class="dashboard-box">
             <div class="dashboard-box-value">
-                <?= $this->formatedPrice . " Kč" ?>
+                <?= $this->escape($this->formatedPrice . " Kč"); ?>
             </div>
             <div class="dashboard-box-text">
                 <?= JText::_("COM_PRUSAWAREHOUSE_VIEW_DASHBOARD_STOCKS_VALUE"); ?>

@@ -7,5 +7,6 @@ class PrusaWarehouseTableStock extends JTable
     {
         parent::__construct('#__prusawarehouse_stocks', 'id', $db);
 
+        $this->setColumnAlias('published', 'state');
     }
 }

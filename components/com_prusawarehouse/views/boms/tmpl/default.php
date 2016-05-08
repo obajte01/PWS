@@ -2,6 +2,19 @@
 
 $selid = isset($_POST['selid']) ? $_POST['selid'] : 1;
 
+$listDirn = $this->state->get('list.direction');
+$listOrd = $this->state->get('list.ordering');
+
+$optionsDir = [
+    JHtml::_('select.option', 'asc', JText::_('COM_PRUSAWAREHOUSE_FILTER_ASC')),
+    JHtml::_('select.option', 'desc', JText::_('COM_PRUSAWAREHOUSE_FILTER_DESC'))
+];
+
+$optionsOrd = [
+    JHtml::_('select.option', 'c.title_stock', JText::_('COM_PRUSAWAREHOUSE_FILTER_TITLE')),
+    JHtml::_('select.option', 'a.quantity_bom', JText::_('COM_PRUSAWAREHOUSE_FILTER_QUANTITY'))
+];
+
 ?>
 
 <a href="<?= JRoute::_('index.php?option=com_prusawarehouse&view=bom&id=0'); ?>"
@@ -17,25 +30,25 @@ $selid = isset($_POST['selid']) ? $_POST['selid'] : 1;
     <form method="post" class="spacing-md">
         <select name="selid" class="pws-select ">
             <option value="1"><?= JText::_('COM_PRUSAWAREHOUSE_VIEW_BOMS_SELECT_BOM'); ?></option>
-            <?php $value = 1 ?>
-            <?php foreach ($this->items as $select): ?>
-                <?php if ($value == $select->id_product) : ?>
-                    <option value="<?= $value++ ?>"><?= $this->escape($select->title_product) ?></option>
-                <?php endif ?>
+            <?php foreach ($this->getProducts() as $select): ?>
+                    <option value="<?= (int)$select->id ?>" selected="<?= isset($_POST["select_button"]) ? 'selected' : '';?>"><?= $this->escape($select->title_product) ?></option>
             <?php endforeach ?>
         </select>
-        <button class="btn btn-default" type="submit"><?= JText::_('COM_PRUSAWAREHOUSE_SELECT'); ?></button>
+        <button name="select_button" class="btn btn-default" type="submit"><?= JText::_('COM_PRUSAWAREHOUSE_SELECT'); ?></button>
     </form>
     <?php $index = 0 ?>
     <?php foreach ($this->items as $head): ?>
-        <?php $index++ ?>
-        <?php if ($index == $head->id_product): ?>
-            <?php if ($selid == $head->id_product): ?>
-                <h2><?= $this->escape($head->title_product) ?></h2>
-            <?php endif ?>
+        <?php if ($selid == $head->id_product): ?>
+            <h2><?= $this->escape($head->title_product) ?></h2>
+            <?php break; ?>
         <?php endif ?>
     <?php endforeach ?>
 
+    <form id="adminForm" method="post" name="adminForm" class="spacing-md pws-form-select">
+        <?= JHtml::_('select.genericlist', $optionsDir, 'filter_order_Dir', '', 'value', 'text', $listDirn); ?>
+        <?= JHtml::_('select.genericlist', $optionsOrd, 'filter_order', '', 'value', 'text', $listOrd); ?>
+        <button type="submit" class="btn btn-default"><?= JText::_('COM_PRUSAWAREHOUSE_ORDER')?></button>
+    </form>
     <table class="table table-striped pws-table">
         <thead>
         <th><?= JText::_('COM_PRUSAWAREHOUSE_TABLE_TITLE'); ?></th>
@@ -66,7 +79,7 @@ $selid = isset($_POST['selid']) ? $_POST['selid'] : 1;
                         <form action="<?= JRoute::_('index.php?option=com_prusawarehouse&view=boms'); ?>"
                               method="post">
                             <button type="submit"><i class="fa fa-trash"></i></button>
-                            <input type="hidden" name="task" value="boms.delete"/>
+                            <input type="hidden" name="task" value="boms.archive"/>
                             <input type="hidden" name="cid[]" value="<?= (int)$bom->id; ?>"/>
                             <?= JHtml::_('form.token'); ?>
                         </form>

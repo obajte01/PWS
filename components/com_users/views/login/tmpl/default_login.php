@@ -43,9 +43,6 @@ JHtml::_('behavior.keepalive');
 				<?php if (!$field->hidden) : ?>
 					<div class="control-group">
 						<div class="controls">
-							<?php echo $field->label; ?>
-						</div>
-						<div class="controls">
 							<?php echo $field->input; ?>
 						</div>
 					</div>
@@ -65,7 +62,7 @@ JHtml::_('behavior.keepalive');
 
 			<div class="control-group">
 				<div class="controls">
-					<button type="submit" class="btn btn-primary">
+					<button type="submit" class="btn btn-default">
 						<?php echo JText::_('JLOGIN'); ?>
 					</button>
 				</div>

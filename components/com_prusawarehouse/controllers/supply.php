@@ -16,8 +16,10 @@ class PrusaWarehouseControllerSupply extends JControllerAdmin
         $input = new JInput();
         $new_quantity = $input->get('new_quantity', '', 'post');
         $quantity_min = $input->get('cqmin', '', 'post');
+        $quantity = $input->get('cq', '', 'post');
         $id = $input->get('cid', '', 'post');
-        if($new_quantity <= $quantity_min)
+
+        if(($new_quantity <= $quantity_min) || ($new_quantity <= $quantity))
         {
             $msg = JText::_('COM_PRUSAWAREHOUSE_WARNINGS_QUANTITY');
             $this->setRedirect(JRoute::_('index.php?option=com_prusawarehouse&view=supply'),JFactory::getApplication()->enqueueMessage($msg,'warning'));
