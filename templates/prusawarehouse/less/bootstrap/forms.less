@@ -1,0 +1,153 @@
+.form-control {
+    height: @form-control-height;
+    border-radius: 0;
+    .box-shadow(@form-control-shadow);
+}
+
+.view-product {
+    .form-horizontal {
+        .radio,
+        .checkbox,
+        .radio-inline,
+        .checkbox-inline {
+            padding-top: 0;
+        }
+    }
+}
+
+.form-group {
+    .star {
+        color: #e6173e;
+    }
+}
+
+.checkbox,
+.radio {
+    label {
+        padding-left: 30px;
+    }
+}
+
+.radio,
+.checkbox {
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-left: -30px;
+    }
+}
+
+.radio-inline,
+.checkbox-inline {
+    padding-left: 30px;
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-left: -30px;
+    }
+}
+
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline {
+    margin-left: 20px;
+}
+
+.has-success {
+    .form-control-validation(@state-success-text; @state-success-bg; @state-success-bg);
+}
+
+.has-warning {
+    .form-control-validation(@state-warning-text; @state-warning-bg; @state-warning-bg);
+}
+
+.has-error {
+    .form-control-validation(@state-danger-text; @state-danger-bg; @state-danger-bg);
+}
+
+.input-group-icon {
+    position: relative;
+
+    .btn {
+        top: 0;
+        right: 0;
+        z-index: 10;
+        position: absolute;
+        color: @input-color;
+        background-color: transparent;
+        border: 0;
+        border-radius: 0;
+
+         i {
+             font-size: 120%;
+         }
+    }
+
+    .form-control:focus + .btn {
+        color: @input-border-focus;
+    }
+
+}
+
+.form-group {
+    &.term-of-use {
+        margin-bottom: 0;
+    }
+}
+
+.customer-note {
+    margin-bottom: 0;
+}
+
+input.invalid {
+    border: @invalid-input-border;
+}
+
+.seznam-captcha {
+    margin-bottom: 10px;
+    a {
+        right: 2px;
+    }
+}
+
+.registration-form-title {
+    margin-bottom: 52px;
+}
+
+.form-horizontal .control-label {
+    padding-top: (@padding-base-vertical + 1);
+}
+
+.split-delivery-box {
+    border: 1px solid @ui-dialog-desc-border;
+    background: @ui-dialog-desc-bg;
+    padding: 15px 15px 5px 15px;
+    margin-bottom: 15px;
+
+    label {
+        width: 100%;
+    }
+
+    &-description {
+        margin-top: -20px;
+        margin-left: 30px;
+        &-small {
+            font-size: 92%;
+            font-weight: normal;
+        }
+    }
+}
+
+@media (max-width: @screen-md-max) {
+    .split-delivery-box {
+        padding-left: 10px;
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+    .registration-form-title {
+        margin-bottom: 9px;
+    }
+    #customer-note {
+        display: none;
+    }
+}
+

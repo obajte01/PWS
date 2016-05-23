@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ProjectTasksOptions">
     <TaskOptions isEnabled="true">
-      <option name="arguments" value="templates/protostar/less/core.less" />
+      <option name="arguments" value="templates/prusawarehouse/less/core.less" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" value="Compiles .less files into .css files" />
       <option name="exitCodeBehavior" value="ERROR" />
       <option name="fileExtension" value="less" />
       <option name="immediateSync" value="true" />
       <option name="name" value="Less - PWS" />
-      <option name="output" value="templates/protostar/css/template.css" />
+      <option name="output" value="templates/prusawarehouse/css/template.css" />
       <option name="outputFilters">
         <array>
           <FilterInfo>

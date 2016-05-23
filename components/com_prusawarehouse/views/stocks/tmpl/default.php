@@ -26,6 +26,8 @@ $optionsOrd = [
 <a href="<?= JRoute::_('index.php?option=com_prusawarehouse&view=stock&id=0'); ?>"
    class="btn btn-default spacing-md"><?= JText::_('COM_PRUSAWAREHOUSE_VIEW_STOCKS_ADD_NEW') ?></a>
 <a class="btn btn-default spacing-md"
+   href="<?= JRoute::_('index.php?option=com_prusawarehouse&view=stockslocs'); ?>"><?= JText::_('COM_PRUSAWAREHOUSE_VIEW_STOCKSLOCS_LIST') ?></a>
+<a class="btn btn-default spacing-md"
    href="<?= JRoute::_('index.php?option=com_prusawarehouse&view=dashboard'); ?>"><?= JText::_('COM_PRUSAWAREHOUSE_BACK') ?></a>
 <h1><?= JText::_('COM_PRUSAWAREHOUSE_VIEW_STOCKS_LIST') ?></h1>
 <?php if (!count($this->items)): ?>

@@ -16,7 +16,7 @@ $user = JFactory::getUser();
                 <?= $this->form->renderField('location'); ?>
                 <button class="btn btn-default" type="submit"><?= JText::_('COM_PRUSAWAREHOUSE_ADD') ?></button>
                 <a class="btn btn-default"
-                   href="<?= JRoute::_('index.php?option=com_prusawarehouse&view=stocks'); ?>"><?= JText::_('COM_PRUSAWAREHOUSE_BACK') ?></a>
+                   href="<?= JRoute::_('index.php?option=com_prusawarehouse&view=stockslocs'); ?>"><?= JText::_('COM_PRUSAWAREHOUSE_BACK') ?></a>
                 <input type="hidden" value="stocksloc.save" name="task">
                 <?= JHtml::_('form.token'); ?>
             </form>

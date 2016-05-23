@@ -38,7 +38,7 @@ $options = [
             </thead>
             <tfoot>
             <tr>
-                <td colspan="5">
+                <td colspan="6">
                     <div class="pagination-box">
                         <?= $this->pagination->getPagesLinks() ?>
                     </div>

@@ -1,0 +1,134 @@
+.label {
+    padding: @labels-padding;
+}
+
+.label-discount() {
+    color: @label-color-discount;
+    background-color: @discount;
+}
+
+.panel-my-tags {
+    @label-color: @font-core-color-2;
+    @label-default-bg: @core-color-1;
+
+    .label {
+        font-size: 100%;
+        font-weight: normal;
+        margin-right: 5px;
+        border: 1px solid @labels-border-color;
+        color: @label-color;
+        background: @label-default-bg;
+
+        a {
+            text-decoration: none;
+
+            i {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+.product-labels {
+    &.main-labels {
+        min-height: 0;
+    }
+
+    &.product-detail-labels::after {
+        .separator-bottom();
+    }
+
+    min-height: 20px;
+    
+    .label {
+        border-radius: 0;
+        font-size: @labels-product-size;
+        font-weight: normal;
+        position: relative;
+        display: inline-block;
+
+        &+.label {
+            margin-left: 5px;
+        }
+
+        &.label-has-bonus {
+            background-color: #000066;
+            .arrow(#000066);
+        }
+
+        &.label-is-bonus {
+            background-color: @is-bonus;
+            .arrow(@is-bonus);
+        }
+
+        &.label-sale {
+            background-color: @sale;
+            .arrow(@sale);
+        }
+
+        &.label-tip {
+            background-color: @tip;
+            .arrow(@tip);
+        }
+
+        &.label-shipping {
+            background-color: @shipping;
+            .arrow(@shipping);
+        }
+
+        &.label-in-stock {
+            background-color: @in-stock;
+            .arrow(@in-stock);
+        }
+
+        &.label-not-available {
+            background-color: @not-available;
+            .arrow(@not-available);
+        }
+
+        &.label-new {
+            background-color: @new;
+            .arrow(@new);
+        }
+
+        &.label-discount-sm {
+            .label-discount();
+        }
+
+        &.label-used {
+            background-color: @used;
+            .arrow(@used);
+        }
+    }
+}
+
+.top-labels {
+    .label {
+        border-radius: 0;
+        font-size: 85%;
+        font-weight: normal;
+        position: relative;
+        display: inline-block;
+        
+        &.label-discount {
+            .label-discount();
+            padding: .3em .3em;
+            position: absolute;
+            font-size: 120%;
+            top: 5px;
+            right: 5px;
+        }
+    }
+}
+
+@media (min-width: @screen-lg-min) {
+    .product-labels {
+        .label {
+            padding: 4px 8px;
+
+            &.label-discount {
+                font-size: 170%;
+            }
+        }
+    }
+}

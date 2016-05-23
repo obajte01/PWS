@@ -1,0 +1,36 @@
+.btn-primary {
+    background: #686666;
+}
+
+.btn-cta {
+  .button-variant(@btn-cta-color; @btn-cta-bg; @btn-cta-border);
+}
+
+.btn {
+    text-decoration: none;
+    text-shadow: @btn-text-shadow;
+    .button-size(@padding-base-vertical; @padding-base-horizontal; @btn-font-size; @line-height-base; @border-radius-base);
+}
+
+.btn-default {
+    text-shadow: @btn-default-text-shadow;
+    padding: 9px 25px;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.btn-lg {
+    .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
+    font-weight: @btn-font-weight-large;
+}
+
+.btn-title {
+    position: relative;
+    margin-top: -46px;
+}
+
+@media (max-width: @screen-xs-max) {
+    .btn-responsive {
+        width: 100%;
+    }
+}

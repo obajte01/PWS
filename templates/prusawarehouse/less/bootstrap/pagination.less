@@ -1,0 +1,29 @@
+.pagination {
+    float: right;
+    margin: 0;
+    
+    > li > a {
+        background: none;
+        border: none;
+        border-radius: 0;
+        padding: 3px 10px;
+    }
+    
+    > li:first-child > a,
+    > li:last-child > a,
+    > li:last-child > span {
+        background-color: @pagination-pg-bg;
+        border: 1px solid @pagination-pg-border;
+        border-radius: 0;
+    }
+    
+    > .active > a, 
+    > .active > span, 
+    > .active > a:hover, 
+    > .active > span:hover,
+    > .active > a:focus,
+    > .active > span:focus {
+        background: none;
+        color: @font-core-color-2;
+    }
+}

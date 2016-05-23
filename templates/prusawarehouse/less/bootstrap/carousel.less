@@ -1,0 +1,42 @@
+.carousel-controls {
+    text-align: right;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.nav-tabs {
+    .carousel-controls {
+        margin: 0;
+    }
+}
+
+.carousel-control {
+    position: static;
+    text-shadow: none;
+    border: 1px solid @carousel-control-color;
+    text-decoration: none;
+    opacity: 1;
+    display: inline-block;
+    width: auto;
+
+    i {
+        width: 26px;
+    }
+
+    &:hover {
+        border: 1px solid @brand-color-1 !important;
+        color: @brand-color-1;
+    }
+
+    &.left {
+        background: none;
+    }
+    &.right {
+        background: none;
+        margin-left: 5px;
+    }
+}
+
+.carousel-additional-images.products {
+    border: 0;
+}

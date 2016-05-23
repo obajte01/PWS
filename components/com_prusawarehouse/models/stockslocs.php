@@ -9,7 +9,11 @@ class PrusaWareHouseModelStockslocs extends JModelList
         $query = $this->_db->getQuery(true);
 
         $query->select('*')
-            ->from('#__prusawarehouse_stocksloc');
+            ->from('#__prusawarehouse_stocksloc')
+            ->where('state=1');
+
+        $query->order($this->_db->escape($this->getState('list.ordering', 'id')) . ' ' .
+            $this->_db->escape($this->getState('list.direction', 'ASC')));
 
         return $query;
     }

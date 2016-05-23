@@ -15,7 +15,7 @@ class PrusaWarehouseViewDashboard extends JViewLegacy
     public function display($tpl = null)
     {
         $this->totalPrice = $this->stocksPrice() + $this->productsPrice();
-        $this->formatedPrice = number_format($this->totalPrice,0, ',', ' ');
+        $this->formatedPrice = number_format($this->stocksPrice(),0, ',', ' ');
         $this->user = JFactory::getUser();
         $this->warnings = $this->checkWarnings();
 
